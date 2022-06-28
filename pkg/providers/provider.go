@@ -12,6 +12,7 @@ type Provider string
 
 const (
 	UnknownProvider      Provider = ""
+	AliCloudProvider     Provider = "alicloud"
 	AWSProvider          Provider = "aws"
 	AzureProvider        Provider = "azure"
 	CustomProvider       Provider = "custom"
@@ -31,6 +32,8 @@ func RuleProviderToString(provider Provider) string {
 
 func (p Provider) DisplayName() string {
 	switch p {
+	case "alicloud":
+		return "Alicloud"
 	case "aws":
 		return strings.ToUpper(string(p))
 	case "digitalocean":

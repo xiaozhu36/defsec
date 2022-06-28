@@ -1,6 +1,7 @@
 package terraform
 
 import (
+	"github.com/aquasecurity/defsec/internal/adapters/terraform/alicloud"
 	"github.com/aquasecurity/defsec/internal/adapters/terraform/aws"
 	"github.com/aquasecurity/defsec/internal/adapters/terraform/azure"
 	"github.com/aquasecurity/defsec/internal/adapters/terraform/cloudstack"
@@ -16,6 +17,7 @@ import (
 
 func Adapt(modules terraform.Modules) *state.State {
 	return &state.State{
+		AliCloud:     alicloud.Adapt(modules),
 		AWS:          aws.Adapt(modules),
 		Azure:        azure.Adapt(modules),
 		CloudStack:   cloudstack.Adapt(modules),
