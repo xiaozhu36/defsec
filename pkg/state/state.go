@@ -1,6 +1,7 @@
 package state
 
 import (
+	"github.com/aquasecurity/defsec/pkg/providers/alicloud"
 	"reflect"
 
 	"github.com/aquasecurity/defsec/pkg/providers/aws"
@@ -16,6 +17,7 @@ import (
 )
 
 type State struct {
+	AliCloud     alicloud.AliCloud
 	AWS          aws.AWS
 	Azure        azure.Azure
 	CloudStack   cloudstack.CloudStack
